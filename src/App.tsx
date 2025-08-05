@@ -17,7 +17,7 @@ export default function App(): React.JSX.Element {
     }
 
     setText(prev => {
-      return prev.concat('useEffect executed A.\n');
+      return prev.concat(`Clicked ${clickCount} time(s). useEffect executed A.\n`);
     });
   }, [clickCount]);
 
@@ -27,23 +27,21 @@ export default function App(): React.JSX.Element {
     }
 
     setText(prev => {
-      return prev.concat('useEffect executed B.\n');
+      return prev.concat(`Clicked ${clickCount} time(s). useEffect executed B.\n`);
     });
   }, [clickCount]);
 
   return (
-    <div>
+    <>
       <div>
-      <button onClick={handleClick}>click</button>
+        <button onClick={handleClick}>click</button>
       </div>
-      <div>
-        <textarea
-          placeholder='sample'
-          readOnly={true}
-          rows={10}
-          value={text} />
-      </div>
-    </div>
+      <textarea
+        placeholder='sample'
+        readOnly={true}
+        value={text}
+      />
+    </>
   );
 
 }
