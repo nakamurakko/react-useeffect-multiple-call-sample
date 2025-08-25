@@ -11,6 +11,7 @@ export default function App(): React.JSX.Element {
     setClickCount(prev => prev + 1);
   };
 
+  /** clickCount 変更時に実行する useEffect 1 */
   useEffect(() => {
     if (clickCount === 0) {
       return;
@@ -21,6 +22,7 @@ export default function App(): React.JSX.Element {
     });
   }, [clickCount]);
 
+  /** clickCount 変更時に実行する useEffect 2 */
   useEffect(() => {
     if (clickCount === 0) {
       return;
