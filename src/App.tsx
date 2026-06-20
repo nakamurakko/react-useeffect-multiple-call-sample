@@ -17,9 +17,13 @@ export default function App(): React.JSX.Element {
       return;
     }
 
-    setText(prev => {
-      return prev.concat(`Clicked ${clickCount} time(s). useEffect executed A.\n`);
-    });
+    const execute = async () => {
+      setText(prev => {
+        return prev.concat(`Clicked ${clickCount} time(s). useEffect executed A.\n`);
+      });
+    };
+
+    execute();
   }, [clickCount]);
 
   /** clickCount 変更時に実行する useEffect 2 */
@@ -28,9 +32,13 @@ export default function App(): React.JSX.Element {
       return;
     }
 
-    setText(prev => {
-      return prev.concat(`Clicked ${clickCount} time(s). useEffect executed B.\n`);
-    });
+    const execute = async () => {
+      setText(prev => {
+        return prev.concat(`Clicked ${clickCount} time(s). useEffect executed B.\n`);
+      });
+    };
+
+    execute();
   }, [clickCount]);
 
   return (
